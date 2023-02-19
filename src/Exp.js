@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
 import './Exp.css'
+import config from './config'
 
 function Exp() {
     const[num,setNum] = useState(null)
@@ -9,7 +10,7 @@ function Exp() {
 
     useEffect(()=>{
         if(x && y !== ""){
-            axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${x}&lon=${y}&appid=be3e7673377fb8224b6391222c50a13d`)
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${x}&lon=${y}&appid=${config.api}`)
         .then(res=>{
             console.log(res)
             setNum(res.data)
