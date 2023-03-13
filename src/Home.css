@@ -3,6 +3,11 @@
 .main-div{
     display: flex;
     flex-direction: row;
+    /* background-image: url(hazy.jpg); */
+    /* height: 100%; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .left-div{
@@ -10,20 +15,23 @@
 }
 .right-div{
     width: 80%;
+    text-align: left;
 }
 
 .input1{
     border: none;
-    border-bottom: 2px solid rgb(197, 196, 196);
+    border-bottom: 2px solid rgb(49, 48, 48);
     padding: 5%;
     font-family: 'Manrope', sans-serif;
+    background: transparent;
 }
 
 .input2{
     border: none;
     padding: 5%;
-    border-bottom: 2px solid rgb(197, 196, 196);
+    border-bottom: 2px solid rgb(49, 48, 48);
     font-family: 'Manrope', sans-serif;
+    background: transparent;
 }
 .temp{
     font-size: 40px;
@@ -41,9 +49,6 @@
     margin-top: 0px;
 }
 
-.wrapper{
-
-}
 .middle-div{
     height: 750px;
     border: 0.5px solid rgb(92, 92, 92);
@@ -58,7 +63,7 @@
 }
 .t1{
 
-    width: 30%;
+    width: 50%;
     margin: auto;
     margin-left: 20px;
     font-size: 30px;
@@ -71,3 +76,9 @@
 .humidity{
     font-size: 18px;
 }
+
+.right-inner-div{
+    padding: 3%;
+    margin-top: 2%;
+}
+

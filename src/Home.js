@@ -1,9 +1,10 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
-// import './Exp.css'
 import './Home.css'
 import config from './config'
-// import AirIcon from '@mui/icons-material/Air';
+import hazy from './hazy.jpg'
+import clear from './image.jpg'
+
 
 function Home() {
 
@@ -25,9 +26,12 @@ function Home() {
     },[x,y])
     console.log("This is num",num)
 
+    const { main, description } = num?.weather[0] ?? "Clear Data";
+
   return (
+
     <>
-        <div className='main-div'>
+        <div style={{backgroundImage: main === 'Haze' ? `url(${hazy})` : `url(${clear})`}} className='main-div'>
             <div className='left-div'>
                 <div className='name-div'>
                    <p className='name'>SkySpy</p>
@@ -66,7 +70,20 @@ function Home() {
             </div>
             <div className='middle-div'></div>
             <div className='right-div'>
-
+                <div className='right-inner-div'>
+                    <div>
+                        <p style={{fontSize:" 16px",marginBottom:"0px"}}>Weather forecast</p>
+                    </div>
+                    {
+                        num?.weather.map(item=>{
+                            return(
+                                <div style={{fontSize:"50px",fontWeight:"bold",marginTop:"0px"}}>
+                                    {item.main}
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         </div>
     </>
