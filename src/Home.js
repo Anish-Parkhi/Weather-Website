@@ -53,10 +53,13 @@ function Home() {
                             }°C
                         </p>
                         <div className='high'>
-                        <p><NorthIcon/> {
-                            Math.floor(num?.main.temp_min - 273)
-                            }°C 
-                        </p>
+                            <div>
+                                <p><NorthIcon/> {
+                                    Math.floor(num?.main.temp_min - 273)
+                                    }°C 
+                                </p>
+                            </div>
+                        
                         <p>
                             <SouthIcon/>{
                             Math.floor(num?.main.temp_max - 273)
@@ -86,7 +89,7 @@ function Home() {
             <div className='middle-div'></div>
             <div className='right-div'>
                 <div style={{paddingBottom:"0px"}} className='right-inner-div'>
-                    <div>
+                    <div className='q'>
                         <p style={{fontSize:" 16px",marginBottom:"0px"}}>Weather forecast</p>
                     </div>
                     {
@@ -100,7 +103,7 @@ function Home() {
                     }
                 </div>
                 <div>
-                    <p style={{fontSize:"30px", paddingLeft:"3%"}}>{num?.name}</p>
+                    <p className='loc' style={{fontSize:"30px", paddingLeft:"3%"}}>{num?.name}</p>
                     {/* <p>{description}</p> */}
                 </div>
                 <div className='vis'>

@@ -51,7 +51,7 @@
 
 .middle-div{
     height: 750px;
-    border: 0.5px solid rgb(92, 92, 92);
+    border: 0.5px solid rgb(142, 142, 142);
 }
 .temp-div{
     display: flex;
@@ -131,13 +131,31 @@
         margin: auto ;
         text-align: center;
     }
-    .wrapepr{
+    .wrapper{
         width: 100%;
         text-align: center;
     }
 
     .high{
-        
+      width: 100%;  
+      flex-direction: space-around;
+    }
+
+    .right-div{
+        width: 100%;
+
+    }
+
+    .right-inner-div{
+        display: hidden;
+    }
+
+    .q{
+        display: none;
+    }
+
+    .loc{
+        margin: 0px;
     }
 
   }
