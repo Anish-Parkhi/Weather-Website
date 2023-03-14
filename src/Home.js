@@ -4,11 +4,14 @@ import './Home.css'
 import config from './config'
 import hazy from './hazy.jpg'
 import clear from './image.jpg'
+// import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import NorthIcon from '@mui/icons-material/North';
+import SouthIcon from '@mui/icons-material/South';
 
 
 function Home() {
 
-    const[num,setNum] = useState(null)
+    const[num,setNum] = useState(null) 
     const[x,setX] = useState(28.70)
     const[y,setY] = useState(77.10)
 
@@ -25,6 +28,7 @@ function Home() {
         }   
     },[x,y])
     console.log("This is num",num)
+
 
     const { main, description } = num?.weather[0] ?? "Clear Data";
 
@@ -48,14 +52,25 @@ function Home() {
                             Math.floor(num?.main.temp - 273)
                             }°C
                         </p>
+                        <div className='high'>
+                        <p><NorthIcon/> {
+                            Math.floor(num?.main.temp_min - 273)
+                            }°C 
+                        </p>
+                        <p>
+                            <SouthIcon/>{
+                            Math.floor(num?.main.temp_max - 273)
+                            }°C
+                        </p>
+                        </div>
                     </div>
-                    <div className='t t1'>
+                    {/* <div className='t t1'>
                         <p className='location'> 
                             {
                             num?.name
                             }
                         </p>
-                    </div>
+                    </div> */}
                     </div>
                     <div className='humid'>
                         <div className='humidity'>
@@ -70,19 +85,34 @@ function Home() {
             </div>
             <div className='middle-div'></div>
             <div className='right-div'>
-                <div className='right-inner-div'>
+                <div style={{paddingBottom:"0px"}} className='right-inner-div'>
                     <div>
                         <p style={{fontSize:" 16px",marginBottom:"0px"}}>Weather forecast</p>
                     </div>
                     {
                         num?.weather.map(item=>{
                             return(
-                                <div style={{fontSize:"50px",fontWeight:"bold",marginTop:"0px"}}>
+                                <div style={{fontSize:"50px",fontWeight:"bold",marginTop:"0px",marginBottom:"0px",paddingBottom:"5px"}}>
                                     {item.main}
                                 </div>
                             )
                         })
                     }
+                </div>
+                <div>
+                    <p style={{fontSize:"30px", paddingLeft:"3%"}}>{num?.name}</p>
+                    {/* <p>{description}</p> */}
+                </div>
+                <div className='vis'>
+                    {/* <p>Visibility: {num?.visibility}m</p> */}
+                    {/* <ul>
+                        <li>
+                            Pressure: {num?.main.pressure} Pa
+                        </li>
+                        <li>
+                            Dew Point: {num?.main.dew_point}
+                        </li>
+                    </ul> */}
                 </div>
             </div>
         </div>
